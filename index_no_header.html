@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Tableau Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+    }
+    #vizContainer {
+      width: 100%;
+      height: 100vh;
+    }
+  </style>
+</head>
+<body>
+  <div id="vizContainer"></div>
+
+  <script src="https://public.tableau.com/javascripts/api/tableau-2.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const containerDiv = document.getElementById("vizContainer");
+      const url = "https://public.tableau.com/views/AGuidetoEarlyIntervention/Dashboard4?:language=en-US&:display_count=n&:origin=viz_share_link";
+
+      const options = {
+        hideTabs: true,
+        width: containerDiv.offsetWidth,
+        height: containerDiv.offsetHeight
+      };
+
+      new tableau.Viz(containerDiv, url, options);
+    });
+  </script>
+</body>
+</html>
